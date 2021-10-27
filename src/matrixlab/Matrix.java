@@ -190,6 +190,61 @@ public class Matrix {
 			return false;
 		}
 	}
+	public boolean isSymmetrical() {
+		// TODO: Find out if transpose of the matrix is equal to itself
+
+		Matrix copy = new Matrix(this.name + " copy", transpose().matrix);
+		// int eq = 0;
+
+		for (int i = 0; i < this.matrix.length; i++) {
+			for (int j = 0; j < this.matrix[i].length; j++) {
+				if (copy.matrix[i][j] == this.matrix[i][j]) {
+					// eq++;
+				} else {
+					return false;
+				}
+			}
+		}
+
+		return true;
+		// return (eq == (this.matrix.length * this.matrix.length));
+	}
+
+	public boolean isZero() {
+		// TODO: Find out if all elements are 0
+		// int eq = 0;
+
+		for (int i = 0; i < this.matrix.length; i++) {
+			for (int j = 0; j < this.matrix[i].length; j++) {
+				if (this.matrix[i][j] == 0) {
+					// eq++;
+				} else {
+					return false;
+				}
+			}
+		}
+
+		return true;
+		// return eq == (this.matrix.length * this.matrix.length);
+	}
+
+	public boolean isMajority(int value) {
+		// TODO: find out if the majority of the elements in the matrix are equal to
+		// value
+
+		int eq = 0;
+
+		for (int i = 0; i < this.matrix.length; i++) {
+			for (int j = 0; j < this.matrix[i].length; j++) {
+				if (this.matrix[i][j] == 0) {
+					eq++;
+				}
+			}
+		}
+
+		return (eq > (int) (this.matrix.length * this.matrix.length / 2));
+	}
+
 
 	@Override
 	public String toString() {
