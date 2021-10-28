@@ -198,9 +198,7 @@ public class Matrix {
 
 		for (int i = 0; i < this.matrix.length; i++) {
 			for (int j = 0; j < this.matrix[i].length; j++) {
-				if (copy.matrix[i][j] == this.matrix[i][j]) {
-					// eq++;
-				} else {
+				if (copy.matrix[i][j] != this.matrix[i][j]) {
 					return false;
 				}
 			}
@@ -216,9 +214,7 @@ public class Matrix {
 
 		for (int i = 0; i < this.matrix.length; i++) {
 			for (int j = 0; j < this.matrix[i].length; j++) {
-				if (this.matrix[i][j] == 0) {
-					// eq++;
-				} else {
+				if (this.matrix[i][j] != 0) {
 					return false;
 				}
 			}
